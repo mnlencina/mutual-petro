@@ -110,7 +110,7 @@ const LoginScreen = () => {
         </Formik>
         <View
           style={{
-            padding: 5,
+            padding: 40,
             height: 130,
             justifyContent: "center",
             alignItems: "center",
@@ -120,8 +120,9 @@ const LoginScreen = () => {
           <Image
             source={require("../../../util/claudioVidal.png")}
             style={{
-              width: "90%",
-              height: "90%",
+              marginBottom: 10,
+              width: "100%",
+              height: 100,
             }}
           />
         </View>
@@ -214,7 +215,7 @@ const style = StyleSheet.create({
   error: {
     color: "#ff000a",
     marginBottom: 10,
-    marginTop: -8,
+    marginTop: -15,
     borderColor: "#ff000a",
   },
   base: {
