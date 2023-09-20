@@ -4,14 +4,13 @@ import {
   TextInput,
   View,
   Text,
-  Alert,
-  Image,
   ScrollView,
 } from "react-native";
 import { Formik, useField } from "formik";
 import { StyleSheet } from "react-native-web";
 import Constants from "expo-constants";
 import { loginValidationSchema } from "../../validationSchema/validation";
+import { LinearGradient } from "expo-linear-gradient";
 
 const initialValues = {
   DNI: "",
@@ -55,7 +54,7 @@ const LoginScreen = () => {
             return (
               <View style={style.container}>
                 <View style={style.containerForm}>
-                  <Text style={style.titleInput}>Iniciar Sesion</Text>
+                  <Text style={style.titleInput}>Iniciar Sesión</Text>
 
                   <FormikInputValue
                     name="DNI"
@@ -66,30 +65,50 @@ const LoginScreen = () => {
                   <FormikInputValue
                     name="password"
                     style={style.textInput}
-                    placeholder="Contraseña..."
-                    keyboardType="numeric"
+                    placeholder="Email..."
                     secureTextEntry
                   />
-                  <TouchableOpacity style={style.buttom} onPress={handleSubmit}>
-                    <Text style={style.textButtom}>Iniciar Sesion</Text>
-                  </TouchableOpacity>
+                  <LinearGradient
+                    colors={["#0e3860", "#014083", "#0058ac"]}
+                    style={style.buttom}
+                  >
+                    <TouchableOpacity
+                      style={style.buttom}
+                      onPress={handleSubmit}
+                    >
+                      <Text style={style.textButtom}>Ingresar</Text>
+                    </TouchableOpacity>
+                  </LinearGradient>
                 </View>
               </View>
             );
           }}
         </Formik>
-        <View style={{ justifyContent: "center", alignItems: "center",marginTop:30}}>
-          <Text>Conduccion</Text>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 30,
+          }}
+        >
+          <Text style={{ color: "#a3a3a3", fontWeight: "bold" }}>
+            Conduccion
+          </Text>
           <Text
             style={{
               fontSize: 40,
+
+              color: "#a3a3a3",
             }}
           >
             Claudio Vidal
           </Text>
         </View>
-        <Text style={style.base}></Text>
       </ScrollView>
+      <LinearGradient
+        colors={["#0e3860", "#014083", "#01509b"]}
+        style={style.base}
+      ></LinearGradient>
     </View>
   );
 };
@@ -106,8 +125,7 @@ const style = StyleSheet.create({
     alignItems: "center",
     width: 170,
     height: 40,
-    borderRadius: 10,
-    backgroundColor: "#014083",
+    borderRadius: 15,
     color: "#fff",
     marginHorizontal: 15,
     marginVertical: 15,
@@ -131,16 +149,25 @@ const style = StyleSheet.create({
     fontWeight: "bold",
     color: "#fff",
     paddingVertical: 5,
+    fontFamily: "satisfy",
   },
   containerForm: {
     backgroundColor: "#fff", //color temporal
     justifyContent: "center",
     alignItems: "center",
-    borderWidth: 1,
     borderRadius: 25,
     marginTop: 200,
     width: 300,
     height: 350,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.39,
+    shadowRadius: 8.3,
+
+    elevation: 13,
   },
   titleInput: {
     // marginTop:
@@ -169,7 +196,6 @@ const style = StyleSheet.create({
     borderColor: "#ff000a",
   },
   base: {
-    backgroundColor: "#005eb0",
     height: 50,
   },
 });
