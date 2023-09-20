@@ -14,7 +14,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const initialValues = {
   DNI: "",
-  password: "",
+  email: "",
 };
 
 const FormikInputValue = ({ name, ...props }) => {
@@ -63,10 +63,9 @@ const LoginScreen = () => {
                     keyboardType="numeric"
                   />
                   <FormikInputValue
-                    name="password"
+                    name="email"
                     style={style.textInput}
-                    placeholder="Email..."
-                    secureTextEntry
+                    placeholder="E-mail..."
                   />
                   <LinearGradient
                     colors={["#0e3860", "#014083", "#0058ac"]}
