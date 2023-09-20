@@ -11,6 +11,7 @@ import { Octicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+// const Stack = createStackNavigator
 
 const StackNavigation = () => {
   return (
@@ -21,6 +22,7 @@ const StackNavigation = () => {
       }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="TabNavigation" component={TabNavigation} />
     </Stack.Navigator>
   );
 };

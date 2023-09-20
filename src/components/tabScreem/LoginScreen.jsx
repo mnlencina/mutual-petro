@@ -12,6 +12,7 @@ import { StyleSheet } from "react-native-web";
 import Constants from "expo-constants";
 import { loginValidationSchema } from "../../validationSchema/validation";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
 
 const initialValues = {
   DNI: "",
@@ -35,6 +36,7 @@ const FormikInputValue = ({ name, ...props }) => {
 };
 
 const LoginScreen = () => {
+  const { navigate } = useNavigation();
   return (
     <View
       style={{
@@ -48,8 +50,8 @@ const LoginScreen = () => {
         <Image
           source={require("../../../util/subtitle.png")}
           style={{
-            height: "70%",
-            width: "70%",
+            height: "80%",
+            width: "80%",
           }}
         />
       </View>
@@ -98,7 +100,7 @@ const LoginScreen = () => {
                   >
                     <TouchableOpacity
                       style={style.buttom}
-                      onPress={handleSubmit}
+                      onPress={() => navigate("TabNavigation")}
                     >
                       <Text style={style.textButtom}>Ingresar</Text>
                     </TouchableOpacity>
