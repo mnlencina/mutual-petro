@@ -5,6 +5,7 @@ import {
   View,
   Text,
   ScrollView,
+  Image,
 } from "react-native";
 import { Formik, useField } from "formik";
 import { StyleSheet } from "react-native-web";
@@ -43,8 +44,32 @@ const LoginScreen = () => {
     >
       <Text style={style.textTitle}>Mutual 12 de Septiembre</Text>
 
-      <Text style={style.subTitle}>Trabajando por el bienestar general</Text>
+      <View style={style.subTitle}>
+        <Image
+          source={require("../../../util/subtitle.png")}
+          style={{
+            height: "80%",
+            width: "80%",
+          }}
+        />
+      </View>
       <ScrollView>
+        <View
+          style={{
+            height: 150,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            source={require("../../../util/LogoMutual.png")}
+            style={{
+              width: 120,
+              height: 120,
+            }}
+          />
+        </View>
+
         <Formik
           validationSchema={loginValidationSchema}
           initialValues={initialValues}
@@ -85,23 +110,20 @@ const LoginScreen = () => {
         </Formik>
         <View
           style={{
+            padding: 5,
+            height: 130,
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 30,
+            marginBottom: 10,
           }}
         >
-          <Text style={{ color: "#a3a3a3", fontWeight: "bold" }}>
-            Conduccion
-          </Text>
-          <Text
+          <Image
+            source={require("../../../util/claudioVidal.png")}
             style={{
-              fontSize: 40,
-
-              color: "#a3a3a3",
+              width: "90%",
+              height: "90%",
             }}
-          >
-            Claudio Vidal
-          </Text>
+          />
         </View>
       </ScrollView>
       <LinearGradient
@@ -144,18 +166,20 @@ const style = StyleSheet.create({
     fontWeight: "bold",
   },
   subTitle: {
+    // padding: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    height: 40,
     backgroundColor: "#005eb0",
-    fontWeight: "bold",
-    color: "#fff",
     paddingVertical: 5,
-    fontFamily: "satisfy",
   },
   containerForm: {
     backgroundColor: "#fff", //color temporal
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 25,
-    marginTop: 200,
+    marginBottom: 10,
+    marginTop: 10,
     width: 300,
     height: 350,
     shadowColor: "#000",
@@ -169,7 +193,6 @@ const style = StyleSheet.create({
     elevation: 13,
   },
   titleInput: {
-    // marginTop:
     marginBottom: 15,
     marginVertical: 5,
     fontSize: 25,
@@ -195,6 +218,7 @@ const style = StyleSheet.create({
     borderColor: "#ff000a",
   },
   base: {
-    height: 50,
+    marginTop: -10,
+    height: 60,
   },
 });
