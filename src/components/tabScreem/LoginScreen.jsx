@@ -48,8 +48,8 @@ const LoginScreen = () => {
         <Image
           source={require("../../../util/subtitle.png")}
           style={{
-            height: "80%",
-            width: "80%",
+            height: "70%",
+            width: "70%",
           }}
         />
       </View>
@@ -114,7 +114,7 @@ const LoginScreen = () => {
             height: 130,
             justifyContent: "center",
             alignItems: "center",
-            marginBottom: 10,
+            // marginBottom: 10,
           }}
         >
           <Image
@@ -167,12 +167,12 @@ const style = StyleSheet.create({
     fontWeight: "bold",
   },
   subTitle: {
-    // padding: 5,
+    backgroundColor: "#005eb0",
     justifyContent: "center",
     alignItems: "center",
     height: 40,
-    backgroundColor: "#005eb0",
-    paddingVertical: 5,
+    paddingVertical: 6,
+    paddingHorizontal: 8,
   },
   containerForm: {
     backgroundColor: "#fff", //color temporal
@@ -219,7 +219,6 @@ const style = StyleSheet.create({
     borderColor: "#ff000a",
   },
   base: {
-    marginTop: -10,
     height: 60,
   },
 });
