@@ -15,7 +15,7 @@ import { loginValidationSchema } from "../../validationSchema/validation";
 
 const initialValues = {
   DNI: "",
-  password: "",
+  email: "",
 };
 
 const FormikInputValue = ({ name, ...props }) => {
@@ -64,11 +64,9 @@ const LoginScreen = () => {
                     keyboardType="numeric"
                   />
                   <FormikInputValue
-                    name="password"
+                    name="email"
                     style={style.textInput}
-                    placeholder="Contraseña..."
-                    keyboardType="numeric"
-                    secureTextEntry
+                    placeholder="E-mail..."
                   />
                   <TouchableOpacity style={style.buttom} onPress={handleSubmit}>
                     <Text style={style.textButtom}>Iniciar Sesion</Text>
