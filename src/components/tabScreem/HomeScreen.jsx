@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Constants from "expo-constants";
 import { useNavigation } from "@react-navigation/native";
 
@@ -7,12 +7,12 @@ const HomeScreen = () => {
   const { navigate } = useNavigation();
 
   const handleNavigationToLogin = () => {
-    console.log(navigate("Login"));
+    Alert.alert("vas a salir del home");
     navigate("Login");
   };
 
   return (
-    <View style={{ marginTop: Constants.statusBarHeight }}>
+    <View style={style.containerGeneral}>
       <Text>Home</Text>
       <TouchableOpacity
         style={style.container}
@@ -27,6 +27,11 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const style = StyleSheet.create({
+  containerGeneral: {
+    marginTop: Constants.statusBarHeight,
+    backgroundColor: "#bababa",
+    height: "100%",
+  },
   container: {
     marginHorizontal: 15,
     marginVertical: 15,
