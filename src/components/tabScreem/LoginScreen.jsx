@@ -38,12 +38,7 @@ const FormikInputValue = ({ name, ...props }) => {
 const LoginScreen = () => {
   const { navigate } = useNavigation();
   return (
-    <View
-      style={{
-        marginTop: Constants.statusBarHeight,
-        backgroundColor: "#e6ffff",
-      }}
-    >
+    <View style={style.containerLogin}>
       <Text style={style.textTitle}>Mutual 12 de Septiembre</Text>
 
       <View style={style.subTitle}>
@@ -96,13 +91,13 @@ const LoginScreen = () => {
                   />
                   <LinearGradient
                     colors={["#0e3860", "#014083", "#0058ac"]}
-                    style={style.buttom}
+                    style={style.button}
                   >
                     <TouchableOpacity
-                      style={style.buttom}
+                      style={style.button}
                       onPress={() => navigate("TabNavigation")}
                     >
-                      <Text style={style.textButtom}>Ingresar</Text>
+                      <Text style={style.textButton}>Ingresar</Text>
                     </TouchableOpacity>
                   </LinearGradient>
                 </View>
@@ -140,11 +135,15 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const style = StyleSheet.create({
+  containerLogin: {
+    marginTop: Constants.statusBarHeight,
+    backgroundColor: "#e6ffff",
+  },
   container: {
     justifyContent: "center",
     alignItems: "center",
   },
-  buttom: {
+  button: {
     justifyContent: "center",
     alignItems: "center",
     width: 170,
@@ -154,7 +153,7 @@ const style = StyleSheet.create({
     marginHorizontal: 15,
     marginVertical: 15,
   },
-  textButtom: {
+  textButton: {
     color: "#fff",
     fontSize: 15,
     fontWeight: "bold",
@@ -185,13 +184,13 @@ const style = StyleSheet.create({
     marginTop: 10,
     width: 300,
     height: 350,
-    shadowColor: "#000",
-    shadowOffset: {
+    boxShadowColor: "#000",
+    boxShadowOffset: {
       width: 0,
       height: 6,
     },
-    shadowOpacity: 0.39,
-    shadowRadius: 8.3,
+    boxShadowOpacity: 0.39,
+    boxShadowRadius: 8.3,
 
     elevation: 13,
   },

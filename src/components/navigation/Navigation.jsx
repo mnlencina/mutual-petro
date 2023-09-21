@@ -68,6 +68,7 @@ const TabNavigation = () => {
         name="Credential"
         component={CredentialScreen}
         options={{
+          headerShown: false,
           headerTitle: "Credenciales",
           tabBarLabel: "Credenciales",
           tabBarIcon: ({ color }) => {
