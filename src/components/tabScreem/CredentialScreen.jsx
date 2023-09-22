@@ -90,13 +90,10 @@ const style = StyleSheet.create({
     marginBottom: 15,
   },
   credentialCart: {
-    //borderRadius: 8,
-    //borderWidth: 1,
     width: "90%",
     height: "80%",
     justifyContent: "center",
     alignItems: "center",
-    //backgroundColor: "#3f48cc",
   },
   containerButtons: {
     justifyContent: "center",
