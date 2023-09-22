@@ -108,6 +108,7 @@ const LoginScreen = () => {
         <View
           style={{
             padding: 40,
+            width: "100%",
             height: 130,
             justifyContent: "center",
             alignItems: "center",
@@ -117,9 +118,10 @@ const LoginScreen = () => {
           <Image
             source={require("../../../util/claudioVidal.png")}
             style={{
-              marginBottom: 10,
-              width: "100%",
-              height: 100,
+              width: 200,
+              height: 66.23,
+              opacity: 0.2
+              
             }}
           />
         </View>
@@ -197,7 +199,7 @@ const style = StyleSheet.create({
   titleInput: {
     marginBottom: 15,
     marginVertical: 5,
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#565656",
   },
