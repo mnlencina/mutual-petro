@@ -33,7 +33,7 @@ const TabNavigation = () => {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: "#fff",
-        tabBarInactiveTintColor: "#d8d1d1",
+        tabBarInactiveTintColor: "#acd4ce",
         tabBarStyle: { backgroundColor: "#015cb5", height: 60 },
         tabBarActiveBackgroundColor: "#013161",
         tabBarLabelStyle: { marginBottom: 5 },
@@ -49,7 +49,7 @@ const TabNavigation = () => {
           tabBarLabel: "Inicio",
 
           tabBarIcon: ({ color }) => {
-            return <Octicons name="home" size={35} color={color} />;
+            return <Octicons name="home" size={25} color={color} />;
           },
         }}
       />
@@ -60,7 +60,7 @@ const TabNavigation = () => {
           headerTitle: "Sucursales",
           tabBarLabel: "Sucursales",
           tabBarIcon: ({ color }) => {
-            return <Octicons name="location" size={35} color={color} />;
+            return <Octicons name="location" size={25} color={color} />;
           },
         }}
       />
@@ -72,7 +72,7 @@ const TabNavigation = () => {
           headerTitle: "Credenciales",
           tabBarLabel: "Credenciales",
           tabBarIcon: ({ color }) => {
-            return <Octicons name="id-badge" size={35} color={color} />;
+            return <Octicons name="id-badge" size={25} color={color} />;
           },
         }}
       />
@@ -83,7 +83,7 @@ const TabNavigation = () => {
           headerTitle: "Menu",
           tabBarLabel: "Menu",
           tabBarIcon: ({ color }) => {
-            return <Octicons name="apps" size={35} color={color} />;
+            return <Octicons name="apps" size={25} color={color} />;
           },
         }}
       />
