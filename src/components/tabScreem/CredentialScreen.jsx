@@ -10,14 +10,40 @@ import {
   View,
 } from "react-native";
 import Constants from "expo-constants";
+import { printToFileAsync } from "expo-print";
+import { shareAsync } from "expo-sharing";
+import { documentDirectory, moveAsync } from "expo-file-system";
+import card from "../../../util/CardMutual.png";
+import Data from "../../../util/datosDeUsuario";
 
 const CredentialScreen = () => {
-  const handlerView = (name) => {
-    if (name === "view") Alert.alert("Aca vas a poder ver la constancia");
-    else {
-      Alert.alert("Aca vas a poder descargar la constancia");
-    }
+  const html = `
+  <html>
+  <body>
+    <div>
+    <img src="${card}" style="width:380px; height:214px";/>
+      <h4>${Data.firstName} ${Data.lastName}</h4>
+      <p>Cuil: ${Data.cuilt}</p>
+      <p>DNI: ${Data.DNI}</p>
+      <p>Vencimiento: xx/xx/xx</p>
+    </div>
+  </body>
+</html>
+`;
+
+  const generatePdf = async () => {
+    // personalizar nombre del archivo PDF
+    const pathName = `ContanciaMutual.pdf`;
+
+    const file = await printToFileAsync({
+      html: html,
+      base64: false,
+    });
+    const destinationUri = `${documentDirectory}${pathName}`;
+    await moveAsync({ from: file.uri, to: destinationUri });
+    await shareAsync(destinationUri);
   };
+
   return (
     <View style={style.container}>
       <ScrollView>
@@ -46,22 +72,9 @@ const CredentialScreen = () => {
             <TouchableOpacity
               name="View"
               style={style.buttonView}
-              onPress={() => handlerView("view")}
+              onPress={generatePdf}
             >
-              <Text style={style.textButton}>Ver Constancia</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-
-          <LinearGradient
-            colors={["#0e3860", "#014083", "#0058ac"]}
-            style={style.buttonView}
-          >
-            <TouchableOpacity
-              name="download"
-              style={style.buttonView}
-              onPress={() => handlerView("download")}
-            >
-              <Text style={style.textButton}>Descargar Constancia</Text>
+              <Text style={style.textButton}>Compartir Constancia</Text>
             </TouchableOpacity>
           </LinearGradient>
         </View>
@@ -79,9 +92,10 @@ const style = StyleSheet.create({
     height: "100%",
   },
   containerLogo: {
-    marginTop: 20,
+    marginTop: 30,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 30,
   },
   logoUser: {
     width: 100,
