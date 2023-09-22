@@ -20,13 +20,20 @@ const CredentialScreen = () => {
     <View style={style.container}>
       <View style={style.containerLogo}>
         <Image
-          source={require("../../../util/LogoMutual.png")}
+          source={require("../../../util/logoAzul.png")}
           style={style.logoUser}
         />
       </View>
       <View style={style.containerCredentialCart}>
+      
         <View style={style.credentialCart}>
-          <Text style={style.textButton}>TARJETA CREDENCIAL</Text>
+        <Image
+          source={require("../../../util/CardMutual.png")}
+          style={{
+            width:380,
+            height:214}}
+        />
+          
         </View>
       </View>
       <View style={style.containerButtons}>
@@ -83,13 +90,13 @@ const style = StyleSheet.create({
     marginBottom: 15,
   },
   credentialCart: {
-    borderRadius: 8,
-    borderWidth: 1,
+    //borderRadius: 8,
+    //borderWidth: 1,
     width: "90%",
     height: "80%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#3f48cc",
+    //backgroundColor: "#3f48cc",
   },
   containerButtons: {
     justifyContent: "center",
