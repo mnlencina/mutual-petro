@@ -8,6 +8,7 @@ import CredentialScreen from "../tabScreem/CredentialScreen";
 import MenuScreen from "../tabScreem/MenuScreen";
 import LoginScreen from "../tabScreem/LoginScreen";
 import { Octicons } from "@expo/vector-icons";
+import { Text, View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

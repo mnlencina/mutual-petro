@@ -3,11 +3,13 @@ import React from "react";
 import {
   Alert,
   Image,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import Constants from "expo-constants";
 
 const CredentialScreen = () => {
   const handlerView = (name) => {
@@ -18,51 +20,52 @@ const CredentialScreen = () => {
   };
   return (
     <View style={style.container}>
-      <View style={style.containerLogo}>
-        <Image
-          source={require("../../../util/logoAzul.png")}
-          style={style.logoUser}
-        />
-      </View>
-      <View style={style.containerCredentialCart}>
-      
-        <View style={style.credentialCart}>
-        <Image
-          source={require("../../../util/CardMutual.png")}
-          style={{
-            width:380,
-            height:214}}
-        />
-          
+      <ScrollView>
+        <View style={style.containerLogo}>
+          <Image
+            source={require("../../../util/logoAzul.png")}
+            style={style.logoUser}
+          />
         </View>
-      </View>
-      <View style={style.containerButtons}>
-        <LinearGradient
-          colors={["#0e3860", "#014083", "#0058ac"]}
-          style={style.buttonView}
-        >
-          <TouchableOpacity
-            name="View"
+        <View style={style.containerCredentialCart}>
+          <View style={style.credentialCart}>
+            <Image
+              source={require("../../../util/CardMutual.png")}
+              style={{
+                width: 380,
+                height: 214,
+              }}
+            />
+          </View>
+        </View>
+        <View style={style.containerButtons}>
+          <LinearGradient
+            colors={["#0e3860", "#014083", "#0058ac"]}
             style={style.buttonView}
-            onPress={() => handlerView("view")}
           >
-            <Text style={style.textButton}>Ver Constancia</Text>
-          </TouchableOpacity>
-        </LinearGradient>
+            <TouchableOpacity
+              name="View"
+              style={style.buttonView}
+              onPress={() => handlerView("view")}
+            >
+              <Text style={style.textButton}>Ver Constancia</Text>
+            </TouchableOpacity>
+          </LinearGradient>
 
-        <LinearGradient
-          colors={["#0e3860", "#014083", "#0058ac"]}
-          style={style.buttonView}
-        >
-          <TouchableOpacity
-            name="download"
+          <LinearGradient
+            colors={["#0e3860", "#014083", "#0058ac"]}
             style={style.buttonView}
-            onPress={() => handlerView("download")}
           >
-            <Text style={style.textButton}>Descargar Constancia</Text>
-          </TouchableOpacity>
-        </LinearGradient>
-      </View>
+            <TouchableOpacity
+              name="download"
+              style={style.buttonView}
+              onPress={() => handlerView("download")}
+            >
+              <Text style={style.textButton}>Descargar Constancia</Text>
+            </TouchableOpacity>
+          </LinearGradient>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -70,11 +73,13 @@ export default CredentialScreen;
 
 const style = StyleSheet.create({
   container: {
+    marginTop: Constants.statusBarHeight,
     justifyContent: "center",
     backgroundColor: "#e6ffff",
     height: "100%",
   },
   containerLogo: {
+    marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -85,7 +90,7 @@ const style = StyleSheet.create({
   containerCredentialCart: {
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    // marginTop: 5,
     height: 250,
     marginBottom: 15,
   },
@@ -98,6 +103,7 @@ const style = StyleSheet.create({
   containerButtons: {
     justifyContent: "center",
     alignItems: "center",
+    // marginBottom: 15,
   },
   buttonView: {
     width: 280,

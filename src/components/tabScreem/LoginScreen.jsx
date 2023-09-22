@@ -46,7 +46,7 @@ const LoginScreen = () => {
           source={require("../../../util/subtitle.png")}
           style={{
             height: "80%",
-            width: "80%",
+            width: "90%",
           }}
         />
       </View>
@@ -112,7 +112,7 @@ const LoginScreen = () => {
             height: 100,
             justifyContent: "center",
             alignItems: "center",
-            // marginBottom: 10,
+            marginBottom: 15,
           }}
         >
           <Image
@@ -120,16 +120,15 @@ const LoginScreen = () => {
             style={{
               width: 200,
               height: 66.23,
-              opacity: 0.2
-              
+              opacity: 0.2,
             }}
           />
         </View>
+        <LinearGradient
+          colors={["#0e3860", "#014083", "#01509b"]}
+          style={style.base}
+        ></LinearGradient>
       </ScrollView>
-      <LinearGradient
-        colors={["#0e3860", "#014083", "#01509b"]}
-        style={style.base}
-      ></LinearGradient>
     </View>
   );
 };
