@@ -21,11 +21,15 @@ const CredentialScreen = () => {
   <html>
   <body>
     <div>
-    <img src="${card}" style="width:380px; height:214px";/>
-      <h4>${Data.firstName} ${Data.lastName}</h4>
-      <p>Cuil: ${Data.cuilt}</p>
-      <p>DNI: ${Data.DNI}</p>
-      <p>Vencimiento: xx/xx/xx</p>
+      <div style="font-size:14; margin:10px; position:absolute; z-index: 1; color: #f4f4f4; top: 125px">
+        <h4 style="margin:0; padding: 0">${Data.firstName} ${Data.lastName}</h4>
+        <p style="margin:0; padding: 0">Cuil: ${Data.cuilt}</p>
+        <p style="margin:0; padding: 0">DNI: ${Data.DNI}</p>
+        <p style="margin:0; padding: 0">Vencimiento: xx/xx/xx</p>
+      </div>
+      <div style=" z-index: 0;">
+        <img src="https://res.cloudinary.com/dwp6b5kxk/image/upload/v1695414693/mutual12/CardMutual_ofw6wr.png" style="width:380px; height:214px;"/>
+      </div>
     </div>
   </body>
 </html>

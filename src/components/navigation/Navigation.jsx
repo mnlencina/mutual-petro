@@ -36,7 +36,7 @@ const TabNavigation = () => {
         tabBarActiveTintColor: "#fff",
         tabBarInactiveTintColor: "#acd4ce",
         tabBarStyle: { backgroundColor: "#015cb5", height: 60 },
-        tabBarActiveBackgroundColor: "#013161",
+        tabBarActiveBackgroundColor: "#024f9d",
         tabBarLabelStyle: { marginBottom: 5 },
         tabBarIconStyle: { marginTop: 5 },
       }}
@@ -70,8 +70,8 @@ const TabNavigation = () => {
         component={CredentialScreen}
         options={{
           headerShown: false,
-          headerTitle: "Credenciales",
-          tabBarLabel: "Credenciales",
+          headerTitle: "Credencial",
+          tabBarLabel: "Credencial",
           tabBarIcon: ({ color }) => {
             return <Octicons name="id-badge" size={25} color={color} />;
           },
