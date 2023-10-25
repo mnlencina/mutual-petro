@@ -43,27 +43,15 @@ const LoginScreen = () => {
 
       <View style={style.subTitle}>
         <Image
-          source={require("../../../util/subtitle.png")}
-          style={{
-            height: "80%",
-            width: "90%",
-          }}
+          source={require("../../../assets/subtitle.png")}
+          style={style.imageSubtitle}
         />
       </View>
       <ScrollView>
-        <View
-          style={{
-            height: 150,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View style={style.containerLogo}>
           <Image
-            source={require("../../../util/LogoMutual.png")}
-            style={{
-              width: 120,
-              height: 120,
-            }}
+            source={require("../../../assets/LogoMutual.png")}
+            style={style.imageLogo}
           />
         </View>
 
@@ -105,23 +93,10 @@ const LoginScreen = () => {
             );
           }}
         </Formik>
-        <View
-          style={{
-            padding: 10,
-            width: "100%",
-            height: 100,
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 15,
-          }}
-        >
+        <View style={style.containerImageBase}>
           <Image
-            source={require("../../../util/claudioVidal.png")}
-            style={{
-              width: 200,
-              height: 66.23,
-              opacity: 0.2,
-            }}
+            source={require("../../../assets/claudioVidal.png")}
+            style={style.imageBase}
           />
         </View>
         <LinearGradient
@@ -176,6 +151,19 @@ const style = StyleSheet.create({
     paddingVertical: 6,
     paddingHorizontal: 8,
   },
+  imageSubtitle: {
+    height: "80%",
+    width: "90%",
+  },
+  containerLogo: {
+    height: 150,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  imageLogo: {
+    width: 120,
+    height: 120,
+  },
   containerForm: {
     backgroundColor: "#fff", //color temporal
     justifyContent: "center",
@@ -219,6 +207,19 @@ const style = StyleSheet.create({
     marginBottom: 10,
     marginTop: -15,
     borderColor: "#ff000a",
+  },
+  containerImageBase: {
+    padding: 10,
+    width: "100%",
+    height: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 15,
+  },
+  imageBase: {
+    width: 200,
+    height: 66.23,
+    opacity: 0.2,
   },
   base: {
     height: 60,

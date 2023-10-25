@@ -1,7 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
-  Alert,
   Image,
   ScrollView,
   StyleSheet,
@@ -13,7 +12,6 @@ import Constants from "expo-constants";
 import { printToFileAsync } from "expo-print";
 import { shareAsync } from "expo-sharing";
 import { documentDirectory, moveAsync } from "expo-file-system";
-import card from "../../../util/CardMutual.png";
 import Data from "../../../util/datosDeUsuario";
 
 const CredentialScreen = () => {
@@ -53,18 +51,15 @@ const CredentialScreen = () => {
       <ScrollView>
         <View style={style.containerLogo}>
           <Image
-            source={require("../../../util/logoAzul.png")}
+            source={require("../../../assets/logoAzul.png")}
             style={style.logoUser}
           />
         </View>
         <View style={style.containerCredentialCart}>
           <View style={style.credentialCart}>
             <Image
-              source={require("../../../util/CardMutual.png")}
-              style={{
-                width: 380,
-                height: 214,
-              }}
+              source={require("../../../assets/CardMutual.png")}
+              style={style.imageCredential}
             />
           </View>
         </View>
@@ -117,6 +112,10 @@ const style = StyleSheet.create({
     height: "80%",
     justifyContent: "center",
     alignItems: "center",
+  },
+  imageCredential: {
+    width: 380,
+    height: 214,
   },
   containerButtons: {
     justifyContent: "center",
